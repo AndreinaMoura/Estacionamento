@@ -156,3 +156,23 @@ main{
     display: flex;
     flex-direction: column;
 }
+
+.linha{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.vaga{
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.corpo{
+    margin: 10px;
+    background-color: antiquewhite;
+    max-width: 45vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

@@ -6,8 +6,9 @@ const conDB = mysql.createConnection({
     "database": "estacionamento"
 });
 
-function listarVeiculos(req, res) {
-    let query = "SELECT * FROM veiculos";
+function listarEntradas(req, res) {
+    let query = "SELECT * FROM vw_entradas";
+
     conDB.query(query, (err, result) => {
         if(err == null) {
             res.json(result).status(200).end();
@@ -17,8 +18,9 @@ function listarVeiculos(req, res) {
     })
 };
 
-function listarVeiculo(req, res) {
+function cadastrarEntrada(req, res) {
     let query = `SELECT * FROM veiculos WHERE placa = ${req.params.placa}`;
+
     conDB.query(query, (err, result) => {
         if(err == null) {
             res.json(result).status(200).end();
@@ -27,9 +29,14 @@ function listarVeiculo(req, res) {
         }
     })
 };
+
+function editarEntrada(){
+
+}
 
 
 module.exports = {
-    listarVeiculos,
-    listarVeiculo
+    listarEntradas,
+    cadastrarEntrada,
+    editarEntrada
 }

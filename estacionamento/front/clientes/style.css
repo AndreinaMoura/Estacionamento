@@ -3,19 +3,8 @@
     padding: 0;
     box-sizing: border-box;
 }
-table {
-    background-color: #fff;
-}
 
-tbody tr:nth-child(odd) {
-    background-color: #fff;
-}
-
-tbody tr:nth-child(even) {
-    background-color: #ddd;
-}
-
-thead th {
+th {
     font-size: 20px;
     display: table-cell;
     vertical-align: inherit;
@@ -23,15 +12,11 @@ thead th {
     text-align: -internal-center;
 }
 
-thead td {
+td {
     display: table-cell;
     vertical-align: inherit;
-    font-weight: bold;
     text-align: -internal-center;
-}
-
-td {
-    text-align: center;
+    padding: 10px;
 }
 .btn{
     height: 20px;
