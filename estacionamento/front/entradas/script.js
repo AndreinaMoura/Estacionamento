@@ -41,16 +41,16 @@ function preencherTabelas() {
         entrada = document.createElement("td");
         saida = document.createElement("td");
         valor = document.createElement("td");
-        nome.innerHTML = cada.nome;
-        tipo.innerHTML = cada.tipo;
+        nome.innerHTML = cada.nome_cli;
         placa.innerHTML = cada.placa;
-        cor.innerHTML = cada.cor;
         modelo.innerHTML = cada.modelo;
+        cor.innerHTML = cada.cor;
+        tipo.innerHTML = cada.tipo;
         vaga.innerHTML = cada.vaga;
-        entrada.innerHTML = cada.entrada;
-        saida.innerHTML = cada.saida;
+        entrada.innerHTML = cada.data_entrada;
+        saida.innerHTML = cada.data_saida;
         valor.innerHTML = cada.valor
-        linha.append(nome, tipo, placa, cor, modelo);
+        linha.append(nome, placa, modelo, cor, tipo, vaga, entrada, saida, valor);
         document.querySelector("#corpo").appendChild(linha);
     })
 }

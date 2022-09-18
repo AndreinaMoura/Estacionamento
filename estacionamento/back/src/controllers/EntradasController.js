@@ -19,7 +19,7 @@ function listarEntradas(req, res) {
 };
 
 function cadastrarEntrada(req, res) {
-    let query = `SELECT * FROM veiculos WHERE placa = ${req.params.placa}`;
+    let query = `INSERT INTO entrada VALUES(${req.body.placa},)`;
 
     conDB.query(query, (err, result) => {
         if(err == null) {

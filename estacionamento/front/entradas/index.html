@@ -11,33 +11,6 @@
 </head>
 
 <body onLoad="carregar()">
-    <header>
-        <a href="../clientes/index.html">Clientes</a>
-        <a href="../vagas/index.html">Vagas</a>
-        <a href="../entradas/index.html">Entradas</a>
-        <a href="../veiculos/index.html">Veiculos</a>
-    </header>
-    <h2>Entradas</h2>
-    <button class="btnCad" onClick="abrirModalCadastro()">Cadastrar entrada</button>
-    <main>
-        <table>
-            <thead>
-                <tr>
-                    <th id="nome">Nome do cliente</th>
-                    <th id="tipo">Tipo de veiculo</th>
-                    <th id="placa">Placa</th>
-                    <th id="cor">Cor</th>
-                    <th id="modelo">Modelo</th>
-                    <th id="vaga">Vaga</th>
-                    <th id="entrada">Entrada</th>
-                    <th id="saida">Saída</th>
-                    <th id="valor">valor</th>		
-                </tr>
-            </thead>
-            <tbody id="corpo">
-            </tbody>
-        </table>
-    </main>
     <div class="modal cadastrar model">
         <div class="modal-content">
             <button onClick="fecharModal()"> <img class="icone"
@@ -58,6 +31,33 @@
             </div>
         </div>
     </div>
+    <header>
+        <a href="../clientes/index.html">Clientes</a>
+        <a href="../vagas/index.html">Vagas</a>
+        <a href="../entradas/index.html">Entradas</a>
+        <a href="../veiculos/index.html">Veiculos</a>
+    </header>
+    <h2>Entradas</h2>
+    <button class="btnCad" onClick="abrirModalCadastro()">Cadastrar entrada</button>
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome do cliente</th>
+                    <th>Placa</th>
+                    <th>Modelo</th>
+                    <th>Cor</th>
+                    <th>Tipo de veiculo</th>
+                    <th>Vaga</th>
+                    <th>Entrada</th>
+                    <th>Saída</th>
+                    <th>valor</th>		
+                </tr>
+            </thead>
+            <tbody id="corpo">
+            </tbody>
+        </table>
+    </main>
 </body>
 <script src="script.js"></script>
 
