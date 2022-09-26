@@ -21,6 +21,7 @@ CREATE TABLE vagas(
 );
 
 CREATE TABLE entradas(
+    id_entrada integer not null PRIMARY KEY auto_increment,
     id_cliente integer not null,
     placa varchar(9) not null,
     id_vaga varchar(3) not null,
@@ -41,3 +42,8 @@ INNER JOIN veiculos v
 on e.placa = v.placa
 INNER JOIN vagas vg
 on e.id_vaga = vg.id;
+
+insert into clientes values (default,"Ana","(19) 99837-7898","Rua Bueno"),(default,"José","(19) 99845-7835","Rua Amâncio"),(default,"Rodrigo","(19) 99837-2435","Rua Maracuja");
+insert into veiculos values ("CMA1234","Honda","Azul","Moto"),("DOS4321","Fiat","Cinza","Carro"),("KAD7890","Chevrolet","Preto","Carro");
+insert into vagas values ("A1",0),("A2",0),("A3",1),("A4",0),("A5",1),("A6",0),("A7",1),("A8",0),("A9",0),("B1",0),("B2",0),("B3",0),("B4",0),("B5",0),("B6",0),("B7",0),("B8",0),("B9",0);
+insert into entradas values (default, 1, "CMA1234", "A5", curdate(),curdate(),30.00),(default, 2, "DOS4321", "A3", curdate(),curdate(),30.00),(default, 3, "KAD7890", "A7", curdate(),curdate(),30.00);

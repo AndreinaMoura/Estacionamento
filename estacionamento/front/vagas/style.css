@@ -161,6 +161,7 @@ main{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    max-width: 50vh;
 }
 
 .vagas{
@@ -177,6 +178,7 @@ main{
 
 .corpo{
     margin: 10px;
-    background-color: antiquewhite;
+    background-color: lightslategrey;
     max-width: 45vw;
+    padding: 10px;
 }
