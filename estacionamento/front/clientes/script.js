@@ -22,7 +22,7 @@ function preencherTabelas() {
         nome.innerHTML = cada.nome;
         endereco.innerHTML = cada.endereco;
         telefone.innerHTML = cada.telefone;
-        linha.append(nome, endereco, telefone);
+        linha.append(nome, telefone, endereco);
         document.querySelector("#corpo").appendChild(linha);
     })
 }
