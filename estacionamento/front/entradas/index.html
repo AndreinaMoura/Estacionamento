@@ -18,15 +18,17 @@
             </button>
             <div class="modal-content-body">
                 <input type="text" id="inputNome" placeholder="Nome">
-                <input type="text" id="inputTipo" placeholder="Tipo de veiculo">
                 <input type="text" id="inputPlaca" placeholder="Placa">
-                <input type="text" id="inputCor" placeholder="Cor">
                 <input type="text" id="inputModelo" placeholder="Modelo">
+                <input type="text" id="inputCor" placeholder="Cor">
+                <input type="text" id="inputTipo" placeholder="Tipo de veiculo">
                 <input type="text" id="inputVaga" placeholder="Vaga">
+                <input type="text" id="inputEntrada" placeholder="Entrada">
                 <input type="text" id="inputSaida" placeholder="Saída">
+                <input type="text" id="inputValor" placeholder="Valor">
             </div>
             <div class="modal-content-footer">
-                <button onClick="cadastrar()" class="btn confirm">Cadastrar</button>
+                <button onClick="editar()" class="btn confirm">Cadastrar</button>
                 <button onClick="fecharModal()" class="btn cancel">Cancelar</button>
             </div>
         </div>
@@ -51,7 +53,7 @@
                     <th>Vaga</th>
                     <th colspan="2">Entrada</th>
                     <th colspan="2">Saída</th>
-                    <th>valor</th>		
+                    <th>Valor</th>		
                 </tr>
             </thead>
             <tbody id="corpo">

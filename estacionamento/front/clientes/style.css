@@ -15,7 +15,7 @@ th {
 td {
     display: table-cell;
     vertical-align: inherit;
-    text-align: -internal-center;
+    text-align: center;
     padding: 10px;
 }
 .btn{

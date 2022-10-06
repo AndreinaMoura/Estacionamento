@@ -54,7 +54,7 @@ function preencherTabelas() {
         entrada_hora.innerHTML = cada.data_entrada.slice(11, 19);
         saida_data.innerHTML = (cada.data_saida !== null) ? cada.data_saida.slice(0, 10) : "";
         saida_hora.innerHTML = (cada.data_saida !== null) ? cada.data_saida.slice(11, 19) : "";
-        valor.innerHTML = (cada.valor==null) ? cada.valor :(convertMsToHM(datas.getTime() - datae.getTime()) * 15);
+        valor.innerHTML = (cada.valor==null) ? cada.valor :(convertMsToHM(datas.getTime() - datae.getTime()) * 15).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
         linha.append(nome, placa, modelo, cor, tipo, vaga, entrada_data, entrada_hora, saida_data, saida_hora, valor);
         document.querySelector("#corpo").appendChild(linha);
     })
