@@ -24,6 +24,26 @@
             </div>
         </div>
     </main>
+    <div class="modal escondido">
+        <div class="modal-container">
+            <span class="fechar" onclick="toggleModal()">×</span>
+            <div class="form-control">
+                <label for="cliente">Cliente</label>
+                <select name="cliente" id="selCli"></select>
+            </div>
+            <div class="form-control">
+                <label for="placa">Placa</label>
+                <select name="placa" id="selPlaca"></select>
+            </div>
+
+            <div class="form-control">
+                <label for="vaga">Vaga</label>
+                <input type="text" id="inpVaga" name="vaga" disabled>
+            </div>
+            
+            <button onclick="cadastrar()">Cadastrar Entrada</button>
+        </div>
+    </div>
 </body>
 <script src="script.js"></script>
 

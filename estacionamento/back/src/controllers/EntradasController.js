@@ -19,11 +19,11 @@ function listarEntradas(req, res) {
 };
 
 function cadastrarEntrada(req, res) {
-    let query = `INSERT INTO entrada VALUES(${req.body.placa},)`;
+    let query = `INSERT INTO entradas VALUES(DEFAULT, ${req.body.id_cliente}, '${req.body.placa}', '${req.body.id_vaga}', curtime(), null, null)`;
 
     conDB.query(query, (err, result) => {
         if(err == null) {
-            res.json(result).status(200).end();
+            res.json(req.body).status(200).end();
         }else {
             res.json(err).status(400).end();
         }

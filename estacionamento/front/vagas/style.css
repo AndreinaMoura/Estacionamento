@@ -182,3 +182,52 @@ main{
     max-width: 45vw;
     padding: 10px;
 }
+
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,.5);
+}
+
+.modal-container{
+    padding: 50px;
+    background-color: white;
+    border-radius: 15px;
+    min-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+}
+
+button{
+    font-size: 12pt;
+    margin-top: 20px;
+}
+
+#inpVaga {
+    width: 100px;
+}
+
+.form-control{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.escondido{
+    display: none!important;
+}
+
+.fechar{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 16pt;
+    font-weight: bold;
+    cursor: pointer;
+}

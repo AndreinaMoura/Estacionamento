@@ -31,7 +31,18 @@ CREATE TABLE entradas(
     FOREIGN KEY (id_cliente) REFERENCES clientes(id),
     FOREIGN KEY (placa) REFERENCES veiculos(placa),
     FOREIGN KEY (id_vaga) REFERENCES vagas(id)
-); 
+);
+
+DELIMITER $
+
+CREATE TRIGGER alterarVaga after insert
+ON entradas
+FOR EACH ROW
+BEGIN
+    UPDATE vagas set disponivel = !disponivel where id = NEW.id_vaga;
+END $
+
+DELIMITER ;
 
 CREATE VIEW vw_entradas as
 SELECT c.nome as nome_cli, v.placa as placa, v.modelo as modelo, v.cor as cor, v.tipo as tipo, vg.id as vaga, e.data_entrada as data_entrada, e.data_saida as data_saida, e.valor as valor
@@ -43,7 +54,48 @@ on e.placa = v.placa
 INNER JOIN vagas vg
 on e.id_vaga = vg.id;
 
-insert into clientes values (default,"Ana","(19) 99837-7898","Rua Bueno"),(default,"José","(19) 99845-7835","Rua Amâncio"),(default,"Rodrigo","(19) 99837-2435","Rua Maracuja");
-insert into veiculos values ("CMA1234","Honda","Azul","Moto"),("DOS4321","Fiat","Cinza","Carro"),("KAD7890","Chevrolet","Preto","Carro");
-insert into vagas values ("A1",0),("A2",0),("A3",1),("A4",0),("A5",1),("A6",0),("A7",1),("A8",0),("A9",0),("B1",0),("B2",0),("B3",0),("B4",0),("B5",0),("B6",0),("B7",0),("B8",0),("B9",0);
-insert into entradas values (default, 1, "CMA1234", "A5", curdate(),curdate(),30.00),(default, 2, "DOS4321", "A3", curdate(),curdate(),30.00),(default, 3, "KAD7890", "A7", curdate(),curdate(),30.00);
+
+INSERT INTO clientes
+VALUES
+(DEFAULT, 'Miguel Ferreira Pereira', '19 98708-7490', 'Rua das Palmeiras 231 Centro - Jundiaí SP'),
+(DEFAULT, 'Luiza Silva', '19 92145-4523', 'Rua Roseira 25 Triunfo - Joanópolis SP'),
+(DEFAULT, 'Felipe Alves', '11 96812-8510', 'Rua dos Bandeirantes 34 - Jarinu SP'),
+(DEFAULT, 'Paulo Moreira', '11 95424-9984', 'Rua Branda 455 - Santos SP'),
+(DEFAULT, 'Jéssica Helena Gonçalves', '11 95501-9898', 'Rua José Bonifácio 227 - Guarulhos SP');
+
+INSERT INTO veiculos
+VALUES
+('EBD5V98', 'Renault Sandero', 'Prata', 'Carro'),
+('AJP4T45', 'Peugeot 308', 'Azul', 'Carro'),
+('POT8V25', 'Yamaha MT03', 'Cinza', 'Moto'),
+('LKC7A43', 'Fiat Uno', 'Vermelho', 'Carro'),
+('MOZ9F28', 'BMW 1200R', 'Preta', 'Moto');
+
+INSERT INTO vagas
+VALUES
+('A1', false),
+('A2', false),
+('A3', false),
+('A4', false),
+('A5', false),
+('A6', false),
+('A7', false),
+('A8', false),
+('A9', false),
+('B1', false),
+('B2', false),
+('B3', false),
+('B4', false),
+('B5', false),
+('B6', false),
+('B7', false),
+('B8', false),
+('B9', false);
+
+INSERT INTO entradas
+VALUES
+(DEFAULT, 5, 'AJP4T45', 'A7', '2022-09-26 18:02:00', '2022-09-27 06:02:00', 180),
+(DEFAULT, 2, 'POT8V25', 'B3', '2022-09-26 23:35:00', NULL, NULL),
+(DEFAULT, 1, 'LKC7A43', 'A7', '2022-09-27 07:10:00', NULL, NULL),
+(DEFAULT, 4, 'EBD5V98', 'A2', '2022-09-27 05:25:00', '2022-09-27 06:25:00', 15),
+(DEFAULT, 3, 'MOZ9F28', 'A3', '2022-09-27 02:00:00', NULL, NULL);
