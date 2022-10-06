@@ -10,7 +10,7 @@ function listarVagas(req, res) {
     let query = "SELECT * FROM vagas";
     conDB.query(query, (err, result) => {
         if(err == null) {
-            res.json(result).status(200).end();
+            res.json(result).status(202).end();
         }else {
             res.json(err).status(400).end();
         }

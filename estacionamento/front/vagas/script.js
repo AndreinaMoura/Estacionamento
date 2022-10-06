@@ -5,11 +5,14 @@ function carregar() {
             return response.json();
         })
         .then(dados => {
-            dados.forEach(cada => {
+            dados.forEach((cada) => {
 
                 var linha = document.querySelector(".linha");
                 var vagas = document.createElement("div");
-                vagas.setAttribute('class', 'vagas')
+                vagas.setAttribute('class', 'vagas');
+                vagas.addEventListener('click', ()=>{
+                    vagas.style = 'background-color: #fa2828;'
+                });
                 id = document.createElement("p");
                 tipo = document.createElement("img");
 
